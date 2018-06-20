@@ -15,12 +15,31 @@ Page({
       autoplay:true,
       interval:500,
       data:[124,4456,4345]
-    }
+    },
+    flag:"aaaa",
+    latitude:"",
+    longitude: "",
+    location: {
+      latitude: "",
+      longitude: "",}
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
+    })
+  },
+  getMyLocation:function(){
+    wx.getLocation({
+      type: 'wgs84',
+      success: function (res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed  
+        var accuracy = res.accuracy
+        console.log(latitude)
+        console.log(longitude)
+      }
     })
   },
   onLoad: function () {
@@ -50,6 +69,7 @@ Page({
         }
       })
     }
+    
   },
   onPullDownRefresh:function(){
     this.setData({

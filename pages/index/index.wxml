@@ -20,7 +20,9 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       <view class='userinfo-city'>{{userInfo.city}}</view>
-
+      <button bindtap='getMyLocation' class='get-my-location'>获取地理位置</button>
+      <text>经度：{{location.longitude}}</text>
+      <text>flag:{{flag}}</text>
     </block>
   </view>
 
